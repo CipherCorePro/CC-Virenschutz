@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visionärer Virenschutz - Log-Einträge</title>
+</head>
+<body>
+    <h1>Visionärer Virenschutz - Letzte Log-Einträge</h1>
+    <pre>
+    {% for log_eintrag in log_eintraege %}
+        {{ log_eintrag }}
+    {% endfor %}
+    </pre>
+    <p><a href="/">Zurück zum Dashboard</a></p>
+
+    <script>
+        // JavaScript für automatisches Seiten-Refresh alle {{ aktualisierungs_intervall }} Sekunden
+        setInterval(function() {
+            location.reload(); // Einfachste Methode: Seite neu laden
+        }, {{ aktualisierungs_intervall }} * 1000); // Intervall in Millisekunden
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+{
+  "prozesse": {
+    "beschreibung": "Regeln für verdächtige Prozesse",
+    "regeln": [
+      {
+        "name": "Verdächtige Kommandozeilen-Interpreter",
+        "beschreibung": "Erkennt Prozesse wie cmd.exe, powershell.exe, die oft für bösartige Zwecke genutzt werden.",
+        "muster": ["wscript.exe", "cscript.exe"],
+        "aktiviert": true,
+        "aktion": "prozess_beenden",
+        "quanten_analyse_aktiviert": false
+      },
+      {
+        "name": "Deaktivierte Beispielregel Prozess",
+        "beschreibung": "Diese Regel ist deaktiviert und wird nicht ausgeführt.",
+        "muster": ["notepad.exe"],
+        "aktiviert": false,
+        "aktion": "warnung"
+      },
+      {
+        "name": "Beispielregel Prozess mit Quantenanalyse (zukünftig)",
+        "beschreibung": "Beispielregel, die Quanten-Anomalieerkennung für Prozesse aktivieren könnte (zukünftig).",
+        "muster": ["unbekannter_prozess.exe"],
+        "aktiviert": true,
+        "aktion": "warnung",
+        "quanten_analyse_aktiviert": true
+      }
+    ]
+  },
+  "dateien": {
+    "beschreibung": "Regeln für verdächtige Dateien",
+    "regeln": [
+      {
+        "name": "Verdächtige Dateiendungen in Download-Ordnern",
+        "beschreibung": "Erkennt ausführbare Dateien in typischen Download-Ordnern oder temporären Verzeichnissen.",
+        "muster": [".exe", ".bat", ".ps1", ".vbs", ".js", ".msi"],
+        "pfade": ["%USERPROFILE%\\Downloads", "%TEMP%"],
+        "aktiviert": true,
+        "aktion": "datei_quarantaene",
+        "quanten_analyse_aktiviert": true,
+        "blockchain_reputation_aktiviert": true
+      },
+      {
+        "name": "Beispielregel Datei mit Quanten-Signaturanalyse (zukünftig)",
+        "beschreibung": "Beispielregel, die Quanten-Malware-Signaturanalyse für Dateien aktivieren könnte (zukünftig).",
+        "muster": [".dll", ".sys"],
+        "pfade": ["%SYSTEMROOT%\\System32"],
+        "aktiviert": false,
+        "aktion": "warnung",
+        "quanten_analyse_aktiviert": true,
+        "blockchain_reputation_aktiviert": false
+      },
+      {
+        "name": "Beispielregel Datei mit Blockchain-Reputationsprüfung (visionär, zukünftig)",
+        "beschreibung": "Beispielregel, die eine Blockchain-basierte Reputationsprüfung für Dateien aktivieren könnte (visionär, zukünftig).",
+        "muster": [".exe"],
+        "pfade": ["%USERPROFILE%\\Desktop"],
+        "aktiviert": false,
+        "aktion": "warnung",
+        "quanten_analyse_aktiviert": false,
+        "blockchain_reputation_aktiviert": true
+      }
+    ]
+  },
+  "netzwerk": {
+    "beschreibung": "Regeln für verdächtige Netzwerkaktivitäten",
+    "regeln": [
+      {
+        "name": "Verdächtige Netzwerkports - Standardports",
+        "beschreibung": "Erkennt Verbindungen zu bekannten schädlichen Ports.",
+        "muster": [21, 23, 135, 139, 445, 3389],
+        "aktiviert": true,
+        "aktion": "warnung",
+        "quanten_analyse_aktiviert": true
+      },
+       {
+        "name": "Verdächtige Netzwerkports - Webports",
+        "beschreibung": "Erkennt Verbindungen zu Webports (80, 443) - Beispiel, sollte evtl. angepasst werden für spezifischere Erkennung.",
+        "muster": [80, 443],
+        "aktiviert": true,
+        "aktion": "warnung"
+      },
+      {
+        "name": "Beispielregel Netzwerk mit Quanten-Anomalieerkennung (zukünftig)",
+        "beschreibung": "Beispielregel, die Quanten-Anomalieerkennung für Netzwerkverkehr aktivieren könnte (zukünftig).",
+        "muster": [6666, 7777, 9999],
+        "aktiviert": true,
+        "aktion": "warnung",
+        "quanten_analyse_aktiviert": true
+      }
+    ]
+  },
+  "ki_analyse": {
+    "beschreibung": "Regeln für KI-basierte Analyse (zukünftig)",
+    "regeln": [
+      {
+        "name": "KI-Prozessverhaltensanalyse - Beispielregel (zukünftig)",
+        "beschreibung": "Beispielregel, die zukünftig KI-basierte Prozessverhaltensanalyse triggern könnte.",
+        "aktiviert": true,
+        "ki_modell": "gemini-2.0-flash"
+      }
+    ]
+  },
+  "quanten_analyse": {
+    "beschreibung": "Regeln und Konfiguration für Quanten-basierte Analyse (zukünftig)",
+    "regeln": [
+      {
+        "name": "Quanten-Anomalieerkennung - Systemverhalten (Beispiel, zukünftig)",
+        "beschreibung": "Beispielregel, die eine Quanten-basierte Anomalieerkennung für das gesamte Systemverhalten triggern könnte (zukünftig).",
+        "aktiviert": true,
+        "quanten_algorithmus": "quanten_anomalie_erkennung_v1.0",
+        "ressourcen_bedarf": "hoch"
+      },
+      {
+        "name": "Quanten-Malware-Signaturanalyse - Erweiterte Analyse (Beispiel, zukünftig)",
+        "beschreibung": "Beispielregel für eine erweiterte Quanten-Malware-Signaturanalyse, die über klassische Methoden hinausgeht (zukünftig).",
+        "aktiviert": false,
+        "quanten_algorithmus": "quanten_signatur_analyse_erweitert_v2.0",
+        "dateitypen": [".exe", ".dll", ".sys"]
+      }
+    ]
+  }
+}

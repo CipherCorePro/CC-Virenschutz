@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visionärer Virenschutz - Konfiguration</title>
+</head>
+<body>
+    <h1>Visionärer Virenschutz - Konfiguration</h1>
+    <pre>
+        {{ konfiguration|tojson(indent=4) }}
+    </pre>
+    <p><a href="/">Zurück zum Dashboard</a> | <a href="/logs">Log-Einträge anzeigen</a></p>
+
+    <script>
+        // JavaScript für automatisches Seiten-Refresh alle {{ aktualisierungs_intervall }} Sekunden
+        setInterval(function() {
+            location.reload(); // Einfachste Methode: Seite neu laden
+        }, {{ aktualisierungs_intervall }} * 1000); // Intervall in Millisekunden
+    </script>
+</body>
+</html>

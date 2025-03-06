@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visionärer Virenschutz - Dashboard</title>
+</head>
+<body>
+    <h1>Visionärer Virenschutz - Dashboard</h1>
+    <p><strong>Version:</strong> {{ virenschutz_version }}</p>
+    <h2>Systemstatus</h2>
+    <ul>
+        <li><strong>CPU-Auslastung (Virenschutz):</strong> {{ cpu_auslastung }}%</li>
+        <li><strong>Speicher-Auslastung (Virenschutz):</strong> {{ speicher_auslastung }}%</li>
+    </ul>
+    <h2>Virenschutz-Status</h2>
+    <ul>
+        <li><strong>Echtzeitschutz:</strong> {% if echtzeit_schutz_aktiv %}Aktiviert{% else %}Deaktiviert{% endif %}</li>
+        <li><strong>Letzte Systemprüfung:</strong> {{ letzte_pruefung_zeit }}</li>
+        <li><strong>Bedrohungen erkannt (seit letzter Prüfung):</strong> {{ anzahl_bedrohungen }}</li>
+        <li><strong>Blockchain-Integration:</strong> {% if blockchain_aktiviert %}Aktiviert{% else %}Deaktiviert{% endif %}</li>
+        <li><strong>KI-Analyse (Gemini):</strong> {% if ki_aktiviert %}Aktiviert{% else %}Deaktiviert{% endif %}</li>
+    </ul>
+    <p><a href="/logs">Letzte Log-Einträge anzeigen</a> | <a href="/config">Konfiguration anzeigen</a></p>
+
+    <script>
+        // JavaScript für automatisches Seiten-Refresh alle {{ aktualisierungs_intervall }} Sekunden
+        setInterval(function() {
+            location.reload(); // Einfachste Methode: Seite neu laden
+        }, {{ aktualisierungs_intervall }} * 1000); // Intervall in Millisekunden
+    </script>
+</body>
+</html>

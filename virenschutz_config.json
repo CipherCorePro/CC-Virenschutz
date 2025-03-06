@@ -1,0 +1,43 @@
+{
+    "virenschutz": {
+        "name": "Visionärer Virenschutz",
+        "version": "0.15",
+        "entwickler": "KI-Agenten-Team"
+    },
+    "systempruefung": {
+        "scan_verzeichnis": ["C:\\"],
+        "dateiendungen_ignoriert": [".log", ".tmp", ".temp"],
+        "system_verzeichnisse_ignoriert": ["C:\\Windows", "C:\\Program Files", "C:\\Program Files (x86)", "C:\\System Volume Information", "C:\\$Recycle.Bin", "C:\\ProgramData"],
+        "echtzeit_schutz": true,
+        "pruefungs_intervall_sekunden": 600
+    },
+    "regeln": {
+        "regelsatz_datei": "virenschutz_regeln.json"
+    },
+    "quarantaene": {
+        "quarantaene_verzeichnis": "quarantaene"
+    },
+    "logging": {
+        "log_datei": "virenschutz.log",
+        "log_level": "DEBUG"
+    },
+    "blockchain": {
+        "aktiviert": true,
+        "log_registrierung_aktiviert": true,
+        "threat_intelligence_aktiviert": true,
+        "update_verifizierung_aktiviert": true,
+        "netzwerk_adresse": "http://localhost:8545",
+        "api_schluessel": "rhAUQtxnceWojZHvhZ1EoG1CuYT7s7NyDWhKkBehOcI",
+        "smart_contract_adresse": "0x00..."
+    },
+    "web_ui": {
+        "aktiviert": true,
+        "port": 5000,
+        "aktualisierungs_intervall": 5
+    },
+    "ki": {
+        "aktiviert": true,
+        "gemini_api_key": "AIzaSyCQ0xd71zVQgtIBHTl6MfOrs3KKQTStySU",
+        "gemini_modell_name": "gemini-2.0-flash"
+    }
+}
