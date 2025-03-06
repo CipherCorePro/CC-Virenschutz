@@ -44,7 +44,7 @@ class KonfigurationManager:
             "threat_intelligence_aktiviert": False,
             "update_verifizierung_aktiviert": False,
             "netzwerk_adresse": "http://localhost:8545", # Platzhalter für Netzwerkadresse (z.B. Ethereum)
-            "api_schluessel": "IHRPrivateKeyHierOderBessereKeyVerwaltung", # API Schlüssel falls benötigt
+            "api_schluessel": "rhAUQtxnceWojZHvhZ1EoG1CuYT7s7NyDWhKkBehOcI", # API Schlüssel falls benötigt
             "smart_contract_adresse": "" # Smart Contract Adresse falls verwendet
         },
         "web_ui": {
@@ -55,7 +55,7 @@ class KonfigurationManager:
         "ki": {  # KI Konfiguration hinzugefügt
             "aktiviert": True,
             "gemini_api_key": "YOUR_GEMINI_API_KEY",  # **WICHTIG: API-Key hier eintragen!**
-            "gemini_modell_name": "gemini-pro"
+            "gemini_modell_name": "gemini-2.0-flash"
         }
     }
 
